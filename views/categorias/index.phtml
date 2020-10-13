@@ -1,0 +1,45 @@
+<?php require VIEWS_PATH . 'includes/header.phtml';?>
+<div class="container">
+	<div class="col-md-12">
+		<h1>Categorias</h1>
+		<hr>
+	</div>
+	
+	<div class="col-md-12">
+	<a href="<?=HOME;?>/categorias/new/" class="btn btn-success">
+						Inserir
+					</a>
+	</div>
+	<br>
+	<div class="col-md-12">
+		<table class="table">
+			<thead>
+			<tr>
+				<th>#</th>
+				<th>Categoria</th>				
+				<th>Criado em</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+			<?php foreach($this->categorias as $e):?>
+			<tr>
+				<td><?=$e['id'];?></td>
+				<td><?=$e['nome'];?></td>				
+				<td><?=date('d/m/Y H:i:s', strtotime($e['created_at']));?></td>
+				<td>
+					<a href="<?=HOME;?>/categorias/edit/<?=$e['id'];?>" class="btn btn-default">
+						Editar
+					</a>
+					<a href="<?=HOME;?>/categorias/remove/<?=$e['id'];?>" class="btn btn-danger">
+						Excluir
+					</a>
+				</td>
+			</tr>
+			<?php endforeach;?>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+<?php require VIEWS_PATH . 'includes/footer.phtml';?>

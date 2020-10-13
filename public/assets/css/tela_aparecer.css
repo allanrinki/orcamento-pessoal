@@ -1,0 +1,30 @@
+#menu li {
+   display: inline-block;
+   width: 150px;
+   height: -2px;
+   background: green;
+   line-height: 5px;
+   text-align: center;
+   font-size: 11pt;
+
+}
+
+#menu li a{
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11pt;
+  width: 150px;
+  padding: 10px;
+
+
+}
+
+#pages section header{
+  font-size: 11pt;
+
+}
+
+.page{display: none;}
+.hide { display: none;}
+.active{ background: #008B8B !important; }

@@ -1,0 +1,47 @@
+<?php require VIEWS_PATH . 'includes/header.phtml';?>
+<div class="container">
+	<div class="col-md-12">
+		<h1>Suas Receitas</h1>
+		<hr>
+	</div>
+	
+	<div class="col-md-12">
+	<a href="<?=HOME;?>/receitas/new/" class="btn btn-success">
+						Inserir
+					</a>
+	</div>
+	<br>
+	<div class="col-md-12">
+		<table class="table">
+			<thead>
+			<tr>
+				<th>#</th>
+				<th>Descricão</th>
+				<th>Valor</th>
+				<th>Criado em</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+			<?php foreach($this->receitas as $e):?>
+			<tr>
+				<td><?=$e['id'];?></td>
+				<td><?=$e['descricao'];?></td>
+				<td>R$ <?=number_format($e['valor'], 2, ',', '.');?></td>
+				<td><?=date('d/m/Y H:i:s', strtotime($e['created_at']));?></td>
+				<td>
+					<a href="<?=HOME;?>/receitas/edit/<?=$e['id'];?>" class="btn btn-default">
+						Editar
+					</a>
+					<a href="<?=HOME;?>/receitas/remove/<?=$e['id'];?>" class="btn btn-danger">
+						Excluir
+					</a>
+				</td>
+			</tr>
+			<?php endforeach;?>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+<?php require VIEWS_PATH . 'includes/footer.phtml';?>

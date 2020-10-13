@@ -1,0 +1,26 @@
+
+</div>
+
+<footer>
+	<div class="container">
+ 		©<?=date('Y');?> Gestão Pessoal.
+ 	</div>
+
+ 	<script src="assets/js/jquery.js"></script>
+ 	<script src="assets/js/jquery.dataTables.min.js"></script>
+  <!--<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
+ 	<script>
+
+ 		$(document).ready( function () {
+		    $('#producao').DataTable( {
+			"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
+			} );
+		    $('#alunos').DataTable();
+		    $('#matriculas').DataTable();
+				$('#meta').DataTable();
+		} );
+ 	</script>
+
+</footer>
+</body>
+</html>

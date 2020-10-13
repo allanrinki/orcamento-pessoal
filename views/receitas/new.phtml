@@ -1,0 +1,32 @@
+<?php require VIEWS_PATH . 'includes/header.phtml';?>
+<div class="container">
+	<div class="col-md-12">
+		<h1>Cadastrar nova receita</h1>
+		<hr>
+	</div>
+	<div class="col-md-12">
+		<form method="post" action="<?=HOME;?>/receitas/new">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Valor de Receita</label>
+				<input type="text" name="valor" class="form-control" id="exampleInputEmail1" placeholder="Valor ganho...">
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputEmail1">Categoria</label>
+				<select name="categorias_id">
+					<?php foreach($this->categorias as $c): ?>
+					<option value="<?=$c['id']?>"><?=$c['nome']?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Descrição</label>
+				<textarea name="descricao" id="" cols="30" rows="10" class="form-control"></textarea>
+			</div>
+			<button type="submit" class="btn btn-success btn-lg pull-right">Salvar Receita</button>
+		</form>
+	</div>
+
+</div>
+<?php require VIEWS_PATH . 'includes/footer.phtml';?>

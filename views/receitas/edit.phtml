@@ -1,0 +1,38 @@
+<?php require VIEWS_PATH . 'includes/header.phtml';?>
+
+<div class="container">
+	<div class="col-md-12">
+		<h1>Editar receita</h1>
+		<hr>
+	</div>
+	<div class="col-md-12">
+		<form method="post" action="<?=HOME;?>/receitas/edit/<?=$this->receita['id'];?>">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Valor Gasto</label>
+				<input type="text" name="valor" class="form-control" id="exampleInputEmail1" placeholder="Valor gasto..."
+                value="<?=$this->receita['valor'];?>">
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputEmail1">Categoria</label>
+				<select name="categorias_id">
+					<?php foreach($this->categorias as $c): ?>
+					<option value="<?=$c['id']?>"
+						<?php if($c['id'] == $this->receita['categorias_id']):?>
+                            selected
+						<?php endif;?>
+                    ><?=$c['nome']?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Descrição</label>
+				<textarea name="descricao" id="" cols="30" rows="10" class="form-control"><?=$this->receita['descricao'];?></textarea>
+			</div>
+			<button type="submit" class="btn btn-success btn-lg pull-right">Atualizar Despesa</button>
+		</form>
+	</div>
+
+</div>
+<?php require VIEWS_PATH . 'includes/footer.phtml';?>
