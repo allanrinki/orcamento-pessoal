@@ -1,4 +1,6 @@
 <?php require VIEWS_PATH . 'includes/header.phtml';?>
+<script type="text/javascript" src="dist/excellentexport.js"></script>
+
 <div class="container">
 	<div class="col-md-12">
 		<h1>Balanço do dia</h1>
@@ -7,8 +9,12 @@
 	
 	
 	<br>
+	<a download="saldoDia.xls" href="#" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');" class="btn btn-success">Excel</a>
+<a download="SaldoDia.csv" href="#" onclick="return ExcellentExport.csv(this, 'datatable');" class="btn btn-success">CSV</a>
+<!-- new API, xlsx -->
+
 	<div class="col-md-12">
-		<table class="table">
+		<table class="table" id="datatable">
 			<thead>
 			<tr>
 				<th>Data</th>
@@ -33,4 +39,10 @@
 	</div>
 
 </div>
+<script src="http://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+<script>
+    require(['dist/excellentexport'], function(ee) {
+        window.ExcellentExport = ee;
+    });
+</script>
 <?php require VIEWS_PATH . 'includes/footer.phtml';?>
