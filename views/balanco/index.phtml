@@ -19,7 +19,7 @@
 			</tr>
 			</thead>
 			<tbody>
-			<?php foreach($this->despesas as $e):?>
+			<?php foreach($this->balanco as $e):?>
 			<tr>
 				<td><?=date('d/m/Y H:i:s', strtotime($e['updated_at']));?></td>
 				<td>R$ <?=number_format($e['total_rec'], 2, ',', '.');?></td>	

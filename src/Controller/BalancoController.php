@@ -24,7 +24,7 @@ class BalancoController
 	{
 		$userId = Session::get('user')['id'];
 		$view = new View('balanco/index.phtml');
-		$view->despesas = (new Balanco(Connection::getInstance()))
+		$view->balanco = (new Balanco(Connection::getInstance()))
 						  ->sum($userId);
 
 		return $view->render();
